@@ -486,6 +486,18 @@ document.write(`
 <img alt="_images/9aac18447e3311aa8374d499c00aa3a08f33e39ae92f1c213d0839cb17889fbe.png" src="_images/9aac18447e3311aa8374d499c00aa3a08f33e39ae92f1c213d0839cb17889fbe.png" />
 </div>
 </div>
+<p>Questions for students</p>
+<ol class="arabic simple">
+<li><p>What information about the dataset you can gain through data inspection?</p></li>
+<li><p>Can you think of better ways to show the data distribution?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try to develop your own data inspection visualization here.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-2-featurization">
@@ -520,6 +532,17 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Questions for students</p>
+<ol class="arabic simple">
+<li><p>Any other featurisation choices?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try to implement another featurisation strategy.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="step-3-machine-learning-models">
 <h2>Step 3: Machine learning models<a class="headerlink" href="#step-3-machine-learning-models" title="Permalink to this heading">#</a></h2>
 <p>Splitting the data</p>
@@ -543,6 +566,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Train a random forest regression model using sklearn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
@@ -560,6 +584,28 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1219,)
 (1219,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Questions for students</p>
+<ol class="arabic simple">
+<li><p>What hyperparameters are used in the random forest model? How to tune them</p></li>
+</ol>
+<p>Example answer</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="n">max_depth</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">Int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">min_samples_split</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">min_samples_leaf</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">min_weight_fraction_leaf</span><span class="p">:</span> <span class="n">Float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">max_features</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="s2">&quot;log2&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">max_leaf_nodes</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">Int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="n">RandomState</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">Int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Initialize the random forest with a different setting.</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
