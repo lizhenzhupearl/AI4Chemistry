@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'RL_tutorial';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Predicting the energy of isomers" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,8 +167,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lectures.html">Course Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Predicting the energy of isomers</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Design Materials with optimal propertities</a></li>
 </ul>
 
     </div>
@@ -364,7 +368,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-self-driving-taxi-with-reinforcement-tabular-q-learning">Hands on: Self-Driving Taxi with Reinforcement Tabular Q-Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-a-random-start-of-state">Step 1: A random start of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-random-start-of-state">A random start of state</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#without-rl-just-random-search">Without RL just random search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-reinforcement-learning-we-use-q-learning-here">With Reinforcement learning, we use Q-learning here</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-q-learning"><strong>Implementing Q-learning</strong></a></li>
@@ -393,7 +397,9 @@ document.write(`
 <div align="center">
   <b>Part 1: Background</b>
 </div>
-<iframe src="_static/RL_AIMS.pdf" width="60%" height="300px"></iframe>
+<div style="display: flex; justify-content: center;"> 
+    <iframe src="_static/RL_AIMS.pdf" width="50%" height="300px"></iframe>
+</div>
 <p><a class="reference download internal" download="" href="_downloads/d5441b414f0e33a9dfe8dd437d0ee606/RL_AIMS.pdf"><span class="xref download myst">Lecture slides</span></a></p>
 <div align="center">
   <b>Part 2: Hands on</b>
@@ -415,8 +421,8 @@ document.write(`
 <li><p>Take care of passenger’s safety and traffic rules</p></li>
 </ol>
 </section>
-<section id="step-1-a-random-start-of-state">
-<h2>Step 1: A random start of state<a class="headerlink" href="#step-1-a-random-start-of-state" title="Permalink to this heading">#</a></h2>
+<section id="a-random-start-of-state">
+<h2>A random start of state<a class="headerlink" href="#a-random-start-of-state" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
@@ -1006,6 +1012,15 @@ We can use <a class="reference external" href="https://matminer.readthedocs.io/e
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Predicting the energy of isomers</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -1022,7 +1037,7 @@ We can use <a class="reference external" href="https://matminer.readthedocs.io/e
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-self-driving-taxi-with-reinforcement-tabular-q-learning">Hands on: Self-Driving Taxi with Reinforcement Tabular Q-Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-a-random-start-of-state">Step 1: A random start of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-random-start-of-state">A random start of state</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#without-rl-just-random-search">Without RL just random search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-reinforcement-learning-we-use-q-learning-here">With Reinforcement learning, we use Q-learning here</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-q-learning"><strong>Implementing Q-learning</strong></a></li>
