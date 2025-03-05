@@ -65,7 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'RL_tutorial';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Predicting the energy of isomers" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,11 +166,8 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lectures.html">Course Details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Predicting the energy of isomers</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Design Materials with optimal propertities</a></li>
 </ul>
 
     </div>
@@ -371,16 +367,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-a-random-start-of-state">Step 1: A random start of state</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#without-rl-just-random-search">Without RL just random search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-reinforcement-learning-we-use-q-learning-here">With Reinforcement learning, we use Q-learning here</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-q-learning"><strong>Implementing Q-learning</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train">Train</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-reflection-and-improvement">Homework: Reflection and improvement:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-hyperparameters-and-optimizations">Task 1: <strong>Hyperparameters and optimizations</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-switch-to-another-policy-training-method">Task 2: <strong>switch to another policy training method</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons">Task 4(optional): if compositional features are not good enough, you may choose to incorporate the structural informaitons.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-q-learning"><strong>Implementing Q-learning</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train">Train</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-and-improvement">Reflection and improvement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-hyperparameters-and-optimizations">Task 1: <strong>Hyperparameters and optimizations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-switch-to-another-policy-training-method">Task 2: <strong>switch to another policy training method</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons">Task 4(optional): if compositional features are not good enough, you may choose to incorporate the structural informaitons.</a></li>
 </ul>
 </li>
 </ul>
@@ -398,10 +392,11 @@ document.write(`
 <h1>Design Materials with optimal propertities<a class="headerlink" href="#design-materials-with-optimal-propertities" title="Permalink to this heading">#</a></h1>
 <div align="center">
   <b>Part 1: Background</b>
-</div><iframe src="_static/RL_AIMS.pdf" width="80%" height="300px"></iframe>
+</div>
+<iframe src="_static/RL_AIMS.pdf" width="60%" height="300px"></iframe>
 <p><a class="reference download internal" download="" href="_downloads/d5441b414f0e33a9dfe8dd437d0ee606/RL_AIMS.pdf"><span class="xref download myst">Lecture slides</span></a></p>
 <div align="center">
-  <b>Part 2</b>
+  <b>Part 2: Hands on</b>
 </div><section id="hands-on-self-driving-taxi-with-reinforcement-tabular-q-learning">
 <h2>Hands on: Self-Driving Taxi with Reinforcement Tabular Q-Learning<a class="headerlink" href="#hands-on-self-driving-taxi-with-reinforcement-tabular-q-learning" title="Permalink to this heading">#</a></h2>
 <p>This tutorial is updated and based on <a class="reference external" href="https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/">here</a></p>
@@ -697,8 +692,9 @@ is the extent to which our Q-values are being updated in every iteration.</p>
 </section>
 <section id="implementing-q-learning">
 <h2><strong>Implementing Q-learning</strong><a class="headerlink" href="#implementing-q-learning" title="Permalink to this heading">#</a></h2>
+</section>
 <section id="train">
-<h3>Train<a class="headerlink" href="#train" title="Permalink to this heading">#</a></h3>
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
@@ -810,7 +806,7 @@ is the extent to which our Q-values are being updated in every iteration.</p>
 </div>
 </section>
 <section id="test">
-<h3>Test<a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Testing the trained agent and rendering as GIF</span>
@@ -859,13 +855,13 @@ GIF saved at taxi_v3_simulation.gif
 </div>
 </div>
 <div align="center">
-  <b>Part 3</b>
+  <b>Part 3: Homework</b>
 </div></section>
-<section id="homework-reflection-and-improvement">
-<h3>Homework: Reflection and improvement:<a class="headerlink" href="#homework-reflection-and-improvement" title="Permalink to this heading">#</a></h3>
-<p>Requirements on homework: finish the task and import the notebook as a pdf with your codes, plots, results and discussions.</p>
+<section id="reflection-and-improvement">
+<h2>Reflection and improvement<a class="headerlink" href="#reflection-and-improvement" title="Permalink to this heading">#</a></h2>
+<p>Requirements on homework: finish the task and import the notebook as a <strong>pdf</strong> with your codes, plots, results and discussions.</p>
 <section id="task-1-hyperparameters-and-optimizations">
-<h4>Task 1: <strong>Hyperparameters and optimizations</strong><a class="headerlink" href="#task-1-hyperparameters-and-optimizations" title="Permalink to this heading">#</a></h4>
+<h3>Task 1: <strong>Hyperparameters and optimizations</strong><a class="headerlink" href="#task-1-hyperparameters-and-optimizations" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code block</span>
@@ -882,7 +878,7 @@ GIF saved at taxi_v3_simulation.gif
 </div>
 </section>
 <section id="task-2-switch-to-another-policy-training-method">
-<h4>Task 2: <strong>switch to another policy training method</strong><a class="headerlink" href="#task-2-switch-to-another-policy-training-method" title="Permalink to this heading">#</a></h4>
+<h3>Task 2: <strong>switch to another policy training method</strong><a class="headerlink" href="#task-2-switch-to-another-policy-training-method" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Choose another policy learning algorithm to train the agent and compare the performance of two models. </span>
@@ -899,7 +895,7 @@ GIF saved at taxi_v3_simulation.gif
 </div>
 </section>
 <section id="task-3">
-<h4>Task 3:<a class="headerlink" href="#task-3" title="Permalink to this heading">#</a></h4>
+<h3>Task 3:<a class="headerlink" href="#task-3" title="Permalink to this heading">#</a></h3>
 <p>Now change the agent to a thermoelectric material Bi2Te3, you can download the structure from <a class="reference external" href="https://next-gen.materialsproject.org/materials/mp-541837?formula=Bi2Se3">here</a>; you have the options to change Te into Se.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -961,7 +957,7 @@ We can use <a class="reference external" href="https://matminer.readthedocs.io/e
 </div>
 </section>
 <section id="task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons">
-<h4>Task 4(optional): if compositional features are not good enough, you may choose to incorporate the structural informaitons.<a class="headerlink" href="#task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons" title="Permalink to this heading">#</a></h4>
+<h3>Task 4(optional): if compositional features are not good enough, you may choose to incorporate the structural informaitons.<a class="headerlink" href="#task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code block</span>
@@ -976,7 +972,6 @@ We can use <a class="reference external" href="https://matminer.readthedocs.io/e
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 </section>
@@ -1011,15 +1006,6 @@ We can use <a class="reference external" href="https://matminer.readthedocs.io/e
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="notebooks.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Predicting the energy of isomers</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -1039,16 +1025,14 @@ We can use <a class="reference external" href="https://matminer.readthedocs.io/e
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-a-random-start-of-state">Step 1: A random start of state</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#without-rl-just-random-search">Without RL just random search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-reinforcement-learning-we-use-q-learning-here">With Reinforcement learning, we use Q-learning here</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-q-learning"><strong>Implementing Q-learning</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train">Train</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-reflection-and-improvement">Homework: Reflection and improvement:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-hyperparameters-and-optimizations">Task 1: <strong>Hyperparameters and optimizations</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-switch-to-another-policy-training-method">Task 2: <strong>switch to another policy training method</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons">Task 4(optional): if compositional features are not good enough, you may choose to incorporate the structural informaitons.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-q-learning"><strong>Implementing Q-learning</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train">Train</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-and-improvement">Reflection and improvement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-hyperparameters-and-optimizations">Task 1: <strong>Hyperparameters and optimizations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-switch-to-another-policy-training-method">Task 2: <strong>switch to another policy training method</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-optional-if-compositional-features-are-not-good-enough-you-may-choose-to-incorporate-the-structural-informaitons">Task 4(optional): if compositional features are not good enough, you may choose to incorporate the structural informaitons.</a></li>
 </ul>
 </li>
 </ul>
