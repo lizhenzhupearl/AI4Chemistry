@@ -5,5 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: lectures
-- file: notebooks
 - file: RL_tutorial
